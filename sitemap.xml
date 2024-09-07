@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://yatmt.site/box/gallery/index.html</loc>
+    <loc>https://yatmt.site/box/animation/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://yatmt.site/box/animation/index.html</loc>
+    <loc>https://yatmt.site/box/gallery/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://yatmt.site/life/games/index.html</loc>
+    <loc>https://yatmt.site/life/movies/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://yatmt.site/personal/about/index.html</loc>
+    <loc>https://yatmt.site/life/games/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://yatmt.site/life/movies/index.html</loc>
+    <loc>https://yatmt.site/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -157,7 +157,7 @@
 
   <url>
     <loc>https://yatmt.site/</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-09-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -165,14 +165,14 @@
   
   <url>
     <loc>https://yatmt.site/tags/Markdown/</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://yatmt.site/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -181,7 +181,7 @@
   
   <url>
     <loc>https://yatmt.site/categories/%E6%BC%94%E7%A4%BA/</loc>
-    <lastmod>2024-09-05</lastmod>
+    <lastmod>2024-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

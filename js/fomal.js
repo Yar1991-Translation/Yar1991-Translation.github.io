@@ -54,7 +54,7 @@ function tonav() {
     position = scroll;
   });
   //修复没有弄右键菜单的童鞋无法回顶部的问题
-  document.getElementById("page-name").innerText = document.title.split(" | Fomalhaut🥝")[0];
+  document.getElementById("page-name").innerText = document.title.split(" | Yatmt🥝")[0];
 }
 
 function scrollToTop() {
@@ -584,7 +584,7 @@ function owoBig() {
         owo_body = '';
       if (dom.length == 2 && dom[1].className == 'OwO-body') owo_body = dom[1];
       // 如果需要在评论内容中启用此功能请解除下面的注释
-      // else if (dom.length == 1 && dom[0].className == 'tk-comment') owo_body = dom[0];
+      else if (dom.length == 1 && dom[0].className == 'tk-comment') owo_body = dom[0];
       else continue;
 
       // 禁用右键（手机端长按会出现右键菜单，为了体验给禁用掉）
@@ -1113,28 +1113,46 @@ function changeMouseMode() {
 var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("08/26/2024 00:00:00"); // 修改为建站时间
+  var now1 = new Date();
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
 
+  // 计算距离生日的天数
+  var birthday = new Date(now1.getFullYear(), 6, 28); // 假设生日为9月15日 (月份0-11)
+  if (now1 > birthday) {
+    birthday.setFullYear(birthday.getFullYear() + 1); // 如果今年生日已经过了，则计算下一年的生日
+  }
+  var diff = (birthday - now1) / 1000 / 60 / 60 / 24;
+  var bdayCount = Math.ceil(diff); // 计算并取整
+
+  // ASCII艺术及站点信息
   var ascll = [
-    `欢迎来到Fomalhaut🥝の小家!`,
-    `Future is now 🍭🍭🍭`,
+    `欢迎来到Yatmt🥝のBlog Home!`,
     `
-        
-███████  ██████  ███    ███  █████  ██      ██   ██  █████  ██    ██ ████████ 
-██      ██    ██ ████  ████ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
-█████   ██    ██ ██ ████ ██ ███████ ██      ███████ ███████ ██    ██    ██    
-██      ██    ██ ██  ██  ██ ██   ██ ██      ██   ██ ██   ██ ██    ██    ██    
-██       ██████  ██      ██ ██   ██ ███████ ██   ██ ██   ██  ██████     ██   
+██╗   ██╗ █████╗ ████████╗███╗   ███╗████████╗
+╚██╗ ██╔╝██╔══██╗╚══██╔══╝████╗ ████║╚══██╔══╝
+ ╚████╔╝ ███████║   ██║   ██╔████╔██║   ██║   
+  ╚██╔╝  ██╔══██║   ██║   ██║╚██╔╝██║   ██║   
+   ██║   ██║  ██║   ██║   ██║ ╚═╝ ██║   ██║   
+   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝   ╚═╝   
+██╗   ██╗ █████╗ ████████╗███╗   ███╗████████╗
+╚██╗ ██╔╝██╔══██╗╚══██╔══╝████╗ ████║╚══██╔══╝
+ ╚████╔╝ ███████║   ██║   ██╔████╔██║   ██║   
+  ╚██╔╝  ██╔══██║   ██║   ██║╚██╔╝██║   ██║   
+   ██║   ██║  ██║   ██║   ██║ ╚═╝ ██║   ██║   
+   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚═╝   ╚═╝   
                                               
+                                     
 `,
     "小站已经苟活",
     dnum,
     "天啦!",
-    "©2022 By Fomalhaut",
+    `距离站长的生日还有 ${bdayCount} 天!`, // 加入生日倒计时
+    "©2024 By Yatmt",
   ];
+
 
   setTimeout(
     console.log.bind(
@@ -1172,7 +1190,7 @@ function createtime2() {
   setTimeout(
     console.warn.bind(
       console,
-      "%c ⚡ Powered by Fomalhaut🥝 %c 你正在访问Fomalhaut🥝の小家",
+      "%c ⚡ Powered by Yatmt🥝 %c 你正在访问Yatmt🥝の小家",
       "color:white; background-color:#f0ad4e",
       ""
     )
@@ -1282,8 +1300,8 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| Yatmt🥝") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('Yatmt🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
     new Vue({
       data: function () {
         this.$notify({
@@ -1321,11 +1339,11 @@ var titleTime;
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
     //离开当前页面时标签显示内容
-    document.title = '👀跑哪里去了~';
+    document.title = '我徒弟呐？';
     clearTimeout(titleTime);
   } else {
     //返回当前页面时标签显示内容
-    document.title = '🐖抓到你啦～';
+    document.title = '徒弟~~';
     //两秒后变回正常标题
     titleTime = setTimeout(function () {
       document.title = OriginTitile;
@@ -2785,34 +2803,46 @@ var now = new Date();
 function createtime() {
   // 当前时间
   now.setTime(now.getTime() + 1000);
-  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
-  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
-  var unit = (dis / 149600000).toFixed(6);  // 天文单位
-  // 网站诞生时间
-  var grt = new Date("08/09/2022 00:00:00");
-  var days = (now - grt) / 1e3 / 60 / 60 / 24,
-    dnum = Math.floor(days),
-    hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
-    hnum = Math.floor(hours);
-  1 == String(hnum).length && (hnum = "0" + hnum);
-  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum,
-    mnum = Math.floor(minutes);
-  1 == String(mnum).length && (mnum = "0" + mnum);
-  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum,
-    snum = Math.round(seconds);
-  1 == String(snum).length && (snum = "0" + snum);
-  let currentTimeHtml = "";
-  (currentTimeHtml =
-    hnum < 18 && hnum >= 9
-      ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
-    document.getElementById("workboard") &&
-    (document.getElementById("workboard").innerHTML = currentTimeHtml);
+
+  var start = new Date("08/01/2022 00:00:00");
+  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17);
+  var unit = (dis / 149600000).toFixed(6);
+
+  var grt = new Date("08/26/2024 00:00:00");
+  var days = (now - grt) / 1e3 / 60 / 60 / 24;
+  var dnum = Math.floor(days);
+  var hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum;
+  var hnum = Math.floor(hours);
+  if (String(hnum).length == 1) hnum = "0" + hnum;
+  var minutes = (now - grt) / 1e3 / 60 - 1440 * dnum - 60 * hnum;
+  var mnum = Math.floor(minutes);
+  if (String(mnum).length == 1) mnum = "0" + mnum;
+  var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum;
+  var snum = Math.round(seconds);
+  if (String(snum).length == 1) snum = "0" + snum;
+
+  // 计算距离 Yatmt 生日的剩余天数
+  var currentYear = now.getFullYear();
+  var birthday = new Date(currentYear, 5, 28); // 6月28日
+
+  if (now > birthday) {
+    birthday.setFullYear(currentYear + 1);
+  }
+
+  var diff = (birthday - now) / 1000 / 60 / 60 / 24;
+  var bdayCount = Math.ceil(diff);
+
+  let currentTimeHtml = `<div style="font-size:13px;font-weight:bold">
+      本站已运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒<br>
+      距离 Yatmt 的生日还有 ${bdayCount} 天! 🎂
+  </div>`;
+
+  document.getElementById("workboard").innerHTML = currentTimeHtml;
 }
-// 设置重复执行函数，周期1000ms
-setInterval(() => {
-  createtime();
-}, 1000);
+
+createtime();
+
+document.addEventListener('pjax:complete', createtime);
 
 /*页脚计时器 end */
 
@@ -3174,10 +3204,10 @@ if (localStorage.getItem("blogbg") != undefined) {
   setBg(localStorage.getItem("blogbg"));
 } else {
   document.getElementById("defineBg").innerText = `:root{
-    --default-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/dm14.webp);
-    --darkmode-bg:url(https://lskypro.acozycotage.net/Fomalhaut/img/yuanshen1.webp);
-    --mobileday-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/snow.webp);
-    --mobilenight-bg: url(https://lskypro.acozycotage.net/Fomalhaut/img/mb8.webp);
+    --default-bg: url(https://lskypro.acozycotage.net/Yatmt/img/dm14.webp);
+    --darkmode-bg:url(https://lskypro.acozycotage.net/Yatmt/img/yuanshen1.webp);
+    --mobileday-bg: url(https://lskypro.acozycotage.net/Yatmt/img/snow.webp);
+    --mobilenight-bg: url(https://lskypro.acozycotage.net/Yatmt/img/mb8.webp);
   }`;
 }
 // 切换背景主函数
@@ -3407,7 +3437,7 @@ function createWinbox() {
 <h3>1. 二次元</h3>
 <details class="folding-tag" cyan><summary> 查看二次元背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/home_bg.webp)')"></a></div>
+              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Yatmt/img/home_bg.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Yatmt/img/home_bg.webp)')"></a></div>
               </div>
             </details>
 
@@ -3416,7 +3446,7 @@ function createWinbox() {
 
 <details class="folding-tag" cyan><summary> 查看风景背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/fj1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/fj1.webp)')"></a></div>
+              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Yatmt/img/fj1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Yatmt/img/fj1.webp)')"></a></div>
               </div>
             </details>
 
@@ -3424,7 +3454,7 @@ function createWinbox() {
 
 <details class="folding-tag" cyan><summary> 查看萌宠背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/mc1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/mc1.webp)')"></a></div>
+              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Yatmt/img/mc1.webp)" class="imgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Yatmt/img/mc1.webp)')"></a></div>
               </div>
             </details>
 
@@ -3448,7 +3478,7 @@ function createWinbox() {
 <h3>6. 适配手机</h3>
 <details class="folding-tag" cyan><summary> 查看适配手机的背景 </summary>
               <div class='content'>
-              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Fomalhaut/img/mb4.webp)" class="pimgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Fomalhaut/img/mb4.webp)')"></a></div>
+              <div class="bgbox"><a href="javascript:;" rel="noopener external nofollow" style="background-image:url(https://lskypro.acozycotage.net/Yatmt/img/mb4.webp)" class="pimgbox" onclick="changeBg('url(https://lskypro.acozycotage.net/Yatmt/img/mb4.webp)')"></a></div>
               </div>
             </details>
 
